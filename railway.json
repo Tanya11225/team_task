@@ -1,4 +1,9 @@
-"build": {
-  "builder": "RAILPACK",
-  "command": "npm install && npm run build"  <-- This might be failing
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "node server.js"
+  }
 }
