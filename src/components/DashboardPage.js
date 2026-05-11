@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 const DashboardPage = () => {
   const [user, setUser] = useState(null);
@@ -14,7 +13,6 @@ const DashboardPage = () => {
       return;
     }
 
-    // Decode token to get user info
     try {
       const userData = JSON.parse(atob(token.split('.')[1]));
       setUser(userData);
@@ -42,7 +40,6 @@ const DashboardPage = () => {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f3f4f6', padding: '2rem' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        {/* Header */}
         <div style={{ 
           display: 'flex', 
           justifyContent: 'space-between', 
@@ -72,7 +69,6 @@ const DashboardPage = () => {
           </button>
         </div>
 
-        {/* Dashboard Stats */}
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
@@ -122,7 +118,6 @@ const DashboardPage = () => {
           </div>
         </div>
 
-        {/* Welcome Message */}
         <div style={{
           backgroundColor: 'white',
           padding: '2rem',
@@ -135,9 +130,6 @@ const DashboardPage = () => {
           </h2>
           <p style={{ color: '#6b7280', fontSize: '1.1rem' }}>
             Your dashboard is ready. Start managing your projects and tasks!
-          </p>
-          <p style={{ color: '#9ca3af', marginTop: '1rem', fontSize: '0.9rem' }}>
-            (Backend API integration in progress - UI Demo)
           </p>
         </div>
       </div>
